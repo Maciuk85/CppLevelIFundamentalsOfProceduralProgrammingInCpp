@@ -1,16 +1,18 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+
 using namespace std;
+
 string first("M");
 string name("Sieron");
-short temp(15);
-double temp2(15.4);
+short temperature(15);
+double temperature2(15.4);
 short students(25);
 double weight(65.3);
 double height(178.4);
 int everestHeight(884800000);
-bool post(false); //skrzynka pocztowa pusta/pe³na
+bool isPostFull(false); //skrzynka pocztowa pusta/pelna
 long neurons;
 long double pi;
 int users;
@@ -25,14 +27,16 @@ enum flag
 };
 
 int main() {
-	cout << "1. litera imienia: " << first <<  endl;
+
+	cout << "Pierwsza litera imienia: " << first <<  endl;
 	cout << "Nazwisko: " << name << endl;
-	cout << "Temperatura(tylko calkowita): " << temp << "*C"<< endl;
-	cout << "Tempretarutra: " << temp2 << "*C" << endl;
+	cout << "Temperatura(tylko calkowita): " << temperature << " *C"<< endl;
+	cout << "Tempretarutra: " << temperature2 << " *C" << endl;
 	cout << "Liczba uczniow w klasie: " << students << endl;
-	cout << "Waga ciala: " << weight << "kg" << endl;
-	cout << "Wzrost: " << height << "cm" << endl;
-	cout << "Wysyokosc Mont Everestu: " << everestHeight << "cm" << endl << endl;
+	cout << "Waga ciala: " << weight << " kg" << endl;
+	cout << "Wzrost: " << height << " cm" << endl;
+	cout << "Wysyokosc Mont Everestu: " << everestHeight << " cm" << endl << endl;
+
 	cout << "Liczba krzesel :" << chairs << endl;
 	cout << "Liczba krzesel(Ref): " << chairsRef << endl;
 	cout << "Nowa liczba krzesel: ";
@@ -45,6 +49,7 @@ int main() {
 	cout << endl;
 	cout << "Liczba krzesel :" << chairs << endl;
 	cout << "Liczba krzesel(Ref): " << chairsRef << endl << endl;
+
 	cout << "Pierwsza przyprostokatna: ";
 	cin >> a;
 	cout << endl;
@@ -54,6 +59,8 @@ int main() {
 	cout<< "Przyprostokatne: "<< a << "," << b << endl;
 	c = sqrt(pow(a,2)+pow(b,2));
 	cout << "Przeciwprostokatna: "<< c << endl;
+
 	system("pause");
 	return 0;
+
 }
