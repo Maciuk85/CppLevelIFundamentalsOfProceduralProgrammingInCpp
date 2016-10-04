@@ -4,7 +4,7 @@
 
 using namespace std;
 
-string first("M");
+char first("M"); // pierwsza litera imienia
 string name("Sieron");
 short temperature(15);
 double temperature2(15.4);
