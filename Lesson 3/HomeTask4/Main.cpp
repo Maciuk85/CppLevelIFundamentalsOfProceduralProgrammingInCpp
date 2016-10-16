@@ -4,10 +4,10 @@
 using namespace std;
 
 string figure;
-int a, b, h, pole;
+double a, b, h, pole;
 int main() {
 
-	cout << "Wybierz figure(kwadrat,prostokat,trojkat,romb): ";
+	cout << "Wybierz figure(kwadrat,prostokat,trojkat,romb): "; // menu zrobic
 	cin >> figure;
 	if (figure == "kwadrat") {
 		cout << "a = ";
@@ -42,11 +42,6 @@ int main() {
 		cout << "a=" << a << endl;
 		cout << "h=" << h << endl;
 		cout << "Pole=" << pole << endl;
-	}
-	else {
-		cout << "ERROR - zla figura" << endl;
-		system("pause");
-		return 0;
 	}
 
 	system("pause");
