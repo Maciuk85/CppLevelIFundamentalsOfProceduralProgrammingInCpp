@@ -4,12 +4,17 @@
 using namespace std;
 
 string type, volume,yesOrNot;
-bool isToneShort, isToneMedium, isToneHigh;
+bool isToneShort(0), isToneMedium(0), isToneHigh(0);
 short balanceP,balanceL, typeMenu;
 
 int main() {
 
-	cout << "Ulubiony gatunek muzyczny (1 - rock/2 - pop/3 - jazz/4 - rnb): ";
+	cout << "Wybierz ulubiony gatunek muzyczny:" << endl;
+	cout << "1.Rock" << endl;
+	cout << "2.Pop" << endl;
+	cout << "3.Jazz" << endl;
+	cout << "4.Rnb" << endl;
+	cout << "5.Koniec programu" << endl;
 	cin >> typeMenu; 
 	switch (typeMenu)
 	{
@@ -26,6 +31,12 @@ int main() {
 	case 4:
 		type = "rnb";
 		break;
+	case 5:
+		exit(0);
+	default:
+		"Nie ma takiej opcji w menu";
+		system("pause");
+		return 0;
 	}
 
 	cout << "Glosnosc muzyki(cicho/glosno): ";
@@ -36,24 +47,18 @@ int main() {
 	if (yesOrNot == "tak") {
 		isToneShort = true;
 	}
-	else if (yesOrNot == "nie") {
-		isToneShort == false;
-	}
+	
 
 	cout << "Tony srednie(tak/nie): ";
 	cin >> yesOrNot;
 	if (yesOrNot == "tak") {
 		isToneMedium = true;
 	}
-	else if (yesOrNot == "nie") {
-		isToneMedium == false;
-	}
 	
-	if (isToneShort == false) {
-		if (isToneMedium == false) {
-			cout << "Tony wysokie - tak" << endl;
+
+	if (isToneShort == false && isToneMedium == false) {
+			cout << "Tony wysokie - tak(minimum 1 ton musi byc wybrany)" << endl;
 			isToneHigh = true;
-		}
 		}
 	else {
 		cout << "Tony wysokie(tak/nie): ";
@@ -61,9 +66,7 @@ int main() {
 		if (yesOrNot == "tak") {
 			isToneHigh = true;
 		}
-		else if (yesOrNot == "nie") {
-			isToneHigh == false;
-		}
+	
 	}
 
 	cout << "Wybierz balans prawego glosnika(max 10): " << endl;

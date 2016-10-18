@@ -17,7 +17,10 @@ int main() {
 		{
 			result = result*number;
 		}
-		cout << result << endl;
+		if (power == 0) {
+			result = 1;
+		}
+		cout << "Wynik: " << result << endl;
 		system("pause");
 		return 0;
 }

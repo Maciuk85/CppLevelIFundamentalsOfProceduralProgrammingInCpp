@@ -28,7 +28,7 @@ int main() {
 	cout << "Imie: " << name << endl;
 	cout << "Nazwisko: " << surname << endl;
 	cout << "Nazwa Szkoly: " << school << endl;
-	cout << "Poziom nauki: " << level << endl;
+	cout << "Poziom nauki(gimnazjum/podstawowka): " << level << endl;
 	cout << "Klasa: " << classNumber << endl;
 	cout << "Profil: "  << profile << endl;
 	if (level == "podstawowka") {

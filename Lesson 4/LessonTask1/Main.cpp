@@ -4,7 +4,7 @@
 
 using namespace std;
 
-unsigned int n,b(1),c(1), d;
+unsigned int n,b(0),c(1), d;
 
 int main() {
 
@@ -12,29 +12,24 @@ int main() {
 	cin >> n;
 	cout << endl;
 	if (n == 0) {
-		cout << n;
+		cout << b << endl;
 	}
 	else if(n == 1){
-		cout << n;
+		cout << b << " " << c << endl;
 	}
 	else {
 		cout << "Liczby ciagu fibonacciego: ";
-		cout << "0 1";
+		cout << b << " " << c;
 		for (int i = 2; i <= n; i++) {
-
-			cout << " " << c;
-
 			d = c;
 			c = c + b;
-			
-
 			b = d;
-
+			cout << " " << c;
 		}
 
 	}
 	
-
+	cout << endl;
 	system("pause");
 	return 0;
 }

@@ -3,12 +3,18 @@
 
 using namespace std;
 
-string figure;
 double a, b, h, pole;
-short figureMenu;
+unsigned short figureMenu;
 int main() {
 
-	cout << "Wybierz figure(kwadrat-1,prostokat-2,trojkat-3,romb-4): "; 
+	cout << "Wybierz figure: " << endl;
+	cout << "1. Kwadrat" << endl;
+	cout << "2. Prostokat" << endl;
+	cout << "3. Trojkat" << endl;
+	cout << "4. Romb" << endl;
+	cout << "5. Koniec programu" << endl;
+
+
 	cin >> figureMenu;
 	switch (figureMenu)
 	{
@@ -49,6 +55,12 @@ int main() {
 		cout << "h=" << h << endl;
 		cout << "Pole=" << pole << endl;
 		break;
+	case 5:
+		exit(0);
+	default:
+		cout << "Nie ma takiej opcji w menu" << endl;
+		system("pause");
+		return(0);
 	}
 
 	system("pause");
