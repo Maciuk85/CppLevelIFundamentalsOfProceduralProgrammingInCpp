@@ -5,17 +5,21 @@ using namespace std;
 
 string figure;
 double a, b, h, pole;
+short figureMenu;
 int main() {
 
-	cout << "Wybierz figure(kwadrat,prostokat,trojkat,romb): "; // menu zrobic
-	cin >> figure;
-	if (figure == "kwadrat") {
+	cout << "Wybierz figure(kwadrat-1,prostokat-2,trojkat-3,romb-4): "; 
+	cin >> figureMenu;
+	switch (figureMenu)
+	{
+	case 1:
 		cout << "a = ";
 		cin >> a;
 		pole = a*a;
 		cout << "a=" << a << endl;
 		cout << "Pole=" << pole << endl;
-	} else if (figure =="prostokat") {
+		break;
+	case 2:
 		cout << "a = ";
 		cin >> a;
 		cout << "b = ";
@@ -24,16 +28,18 @@ int main() {
 		cout << "a=" << a << endl;
 		cout << "b=" << b << endl;
 		cout << "Pole=" << pole << endl;
-	} else if (figure =="trojkat") {
+		break;
+	case 3:
 		cout << "a = ";
 		cin >> a;
 		cout << "h = ";
 		cin >> h;
-		pole = (a*h)/2;
+		pole = (a*h) / 2;
 		cout << "a=" << a << endl;
 		cout << "h=" << h << endl;
 		cout << "Pole=" << pole << endl;
-	} else if (figure == "romb") {
+		break;
+	case 4:
 		cout << "a = ";
 		cin >> a;
 		cout << "h = ";
@@ -42,6 +48,7 @@ int main() {
 		cout << "a=" << a << endl;
 		cout << "h=" << h << endl;
 		cout << "Pole=" << pole << endl;
+		break;
 	}
 
 	system("pause");

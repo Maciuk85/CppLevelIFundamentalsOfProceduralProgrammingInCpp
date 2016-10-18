@@ -5,12 +5,28 @@ using namespace std;
 
 string type, volume,yesOrNot;
 bool isToneShort, isToneMedium, isToneHigh;
-short balanceP;
+short balanceP,balanceL, typeMenu;
 
 int main() {
 
-	cout << "Ulubiony gatunek muzyczny (rock/pop/jazz/rnb): ";
-	cin >> type; // zmienic na menu
+	cout << "Ulubiony gatunek muzyczny (1 - rock/2 - pop/3 - jazz/4 - rnb): ";
+	cin >> typeMenu; 
+	switch (typeMenu)
+	{
+	case 1:
+		type = "rock";
+		break;
+
+	case 2:
+		type = "pop";
+		break;
+	case 3:
+		type = "jazz";
+		break;
+	case 4:
+		type = "rnb";
+		break;
+	}
 
 	cout << "Glosnosc muzyki(cicho/glosno): ";
 	cin >> volume;
@@ -33,8 +49,8 @@ int main() {
 		isToneMedium == false;
 	}
 	
-	if (isToneShort != true) {
-		if (isToneMedium != true) {
+	if (isToneShort == false) {
+		if (isToneMedium == false) {
 			cout << "Tony wysokie - tak" << endl;
 			isToneHigh = true;
 		}
@@ -52,6 +68,7 @@ int main() {
 
 	cout << "Wybierz balans prawego glosnika(max 10): " << endl;
 	cin >> balanceP;
+	balanceL = 10 - balanceP;
 	cout << endl;
 	cout << "Gatunek: " << type << endl;
 	cout << "Glosnosc: " << volume << endl;
@@ -67,7 +84,7 @@ int main() {
 	}
 	cout << endl;
 	cout << "Balans prawego glosnika: " << balanceP << endl;
-	cout << "Balans lewego glosnika: " << 10 - balanceP << endl;
+	cout << "Balans lewego glosnika: " << balanceL << endl;
 	system("pause");
 	return 0;
 }

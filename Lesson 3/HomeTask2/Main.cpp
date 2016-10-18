@@ -3,8 +3,9 @@
 
 using namespace std;
 
-string name, surname,school, level, profile, isSircle, sircle;
+string name, surname,school, level, profile, sircle, basicSubjects("WF, Polski, Matma");
 short classNumber; // numer klasy 
+bool isSircle(false);
 
 
 int main() {
@@ -31,18 +32,19 @@ int main() {
 	cout << "Klasa: " << classNumber << endl;
 	cout << "Profil: "  << profile << endl;
 	if (level == "podstawowka") {
-		cout << "Przedmioty: WF, Polski, Matma" << endl;
+		cout << "Przedmioty: " << basicSubjects << endl;
 	}
 	else if (level == "gimnazjum") {
-		cout << "Przedmioty: WF, Polski, Matma, Fizyka, Chemia" << endl;
+		cout << "Przedmioty: " << basicSubjects << ", Fizyka, Chemia" << endl;
 	}
 	
-	cout << "Czy uczen uczeszcza na kolko?";
+	cout << "Czy uczen uczeszcza na kolko?(0-nie,1-tak)";
 		cin >> isSircle;
-	if (isSircle == "tak") {
-		cout << "Nazwa kolka: ";
-		cin >> sircle;
-		cout << endl;
+		if (isSircle == true) {
+			cout << "Nazwa kolka: ";
+			cin >> sircle;
+			cout << endl;
+		}
 		cout << "Imie: " << name << endl;
 		cout << "Nazwisko: " << surname << endl;
 		cout << "Nazwa Szkoly: " << school << endl;
@@ -50,29 +52,14 @@ int main() {
 		cout << "Klasa: " << classNumber << endl;
 		cout << "Profil: " << profile << endl;
 		cout << "Kolko: " << sircle << endl;
-		if (level == "podstawowka") {
-			cout << "Przedmioty: WF, Polski, Matma" << endl;
-		}
-		else if (level == "gimnazjum") {
-			cout << "Przedmioty: WF, Polski, Matma, Fizyka, Chemia" << endl;
-		}
-	}
-
-	else if (isSircle == "nie") {
-		cout << "Imie: " << name << endl;
-		cout << "Nazwisko: " << surname << endl;
-		cout << "Nazwa Szkoly: " << school << endl;
-		cout << "Poziom nauki: " << level << endl;
-		cout << "Klasa: " << classNumber << endl;
 		cout << "Profil: " << profile << endl;
 		if (level == "podstawowka") {
-			cout << "Przedmioty: WF, Polski, Matma" << endl;
+			cout << "Przedmioty: " << basicSubjects << endl;
 		}
 		else if (level == "gimnazjum") {
-			cout << "Przedmioty: WF, Polski, Matma, Fizyka, Chemia" << endl;
+			cout << "Przedmioty: " << basicSubjects << ", Fizyka, Chemia" << endl;
 		}
-		
-	}
+	
 
 	system("pause");
 	return 0;
