@@ -9,7 +9,7 @@ unsigned short school;
 double marks[7];
 double sum(0);
 
-double genMark(short numberOfSubjects) {
+double genMarks(short numberOfSubjects) {
 	for (int i = 0; i < numberOfSubjects; i++) {
 		marks[i] = rand() % 6 + 1;
 
@@ -60,7 +60,7 @@ double calculateWorstMark(int numberOfSubjects) {
 	}
 	return worstMark;
 }
-double calculateMedian(int numberOfSubjects) {
+double calculateMedian(int numberOfSubjects) { // poszeregowac liczby od najw do najm 
 	double med, a;
 	if (numberOfSubjects == 7) { 
 		med = marks[3];
@@ -88,10 +88,10 @@ int checkDangerous(int numberOfSubjects) {
 int main() {
 	srand(time(NULL));
 	createMenu();
-	switch (school)
+	switch (school) // zrobic funckje wypiszDane();
 	{
 	case 1:
-		genMark(4);
+		genMarks(4);
 		cout << "Srednia: " << calculateAverage(4) << endl;
 		cout << "Mediana: " << calculateMedian(4) << endl;
 		cout << "Najlepsza ocena: " << calculateBestMark(4) << endl;
@@ -99,7 +99,7 @@ int main() {
 		cout << "Zagrozenie(0-nie,1-tak): " << checkDangerous(4) << endl;
 		break;
 	case 2:
-		genMark(6);
+		genMarks(6);
 		cout << "Srednia: " << calculateAverage(6) << endl;
 		cout << "Mediana: " << calculateMedian(6) << endl;
 		cout << "Najlepsza ocena: " << calculateBestMark(6) << endl;
@@ -107,7 +107,7 @@ int main() {
 		cout << "Zagrozenie(0-nie,1-tak): " << checkDangerous(6) << endl;
 		break;
 	case 3:
-		genMark(7);
+		genMarks(7);
 		cout << "Srednia: " << calculateAverage(7) << endl;
 		cout << "Mediana: " << calculateMedian(7) << endl;
 		cout << "Najlepsza ocena: " << calculateBestMark(7) << endl;

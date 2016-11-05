@@ -7,6 +7,22 @@ string name, surname, school, level, profile, sircle, basicSubjects("WF, Polski,
 short classNumber; // numer klasy 
 bool isSircle(false);
 
+short readData() {
+	cout << "Imie: ";
+	cin >> name;
+	cout << "Nazwisko: ";
+	cin >> surname;
+	cin.ignore();
+	cout << "Nazwa Szkoly: ";
+	getline(cin, school);
+	cout << "Poziom nauki(gimnazjum,podstawowka): ";
+	cin >> level;
+	cout << "Klasa: ";
+	cin >> classNumber;
+	cout << "Profil: ";
+	cin >> profile;
+	return 0;
+}
 short writeData() { //wypisywanie danych
 
 	cout << "Imie: " << name << endl;
@@ -25,22 +41,7 @@ short writeData() { //wypisywanie danych
 }
 
 int main() {
-
-	cout << "Imie: ";
-	cin >> name;
-	cout << "Nazwisko: ";
-	cin >> surname;
-	cin.ignore();
-	cout << "Nazwa Szkoly: ";
-	getline(cin, school);
-	cout << "Poziom nauki(gimnazjum,podstawowka): ";
-	cin >> level;
-	cout << "Klasa: ";
-	cin >> classNumber;
-
-	cout << "Profil: ";
-	cin >> profile;
-
+	readData();
 	writeData();
 	cout << "Czy uczen uczeszcza na kolko?(0-nie,1-tak)";
 	cin >> isSircle;
