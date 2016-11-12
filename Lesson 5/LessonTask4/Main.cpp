@@ -23,7 +23,7 @@ double genMarks(short numberOfSubjects) {
 	}
 	return (0);
 }
-short createMenu() {
+short showMenu() {
 	cout << "Wybierz szkole: " << endl;
 	cout << "1. SP" << endl;
 	cout << "2. Gim" << endl;
@@ -87,7 +87,7 @@ int checkDangerous(int numberOfSubjects) {
 }
 int main() {
 	srand(time(NULL));
-	createMenu();
+	showMenu();
 	switch (school) // zrobic funckje wypiszDane();
 	{
 	case 1:

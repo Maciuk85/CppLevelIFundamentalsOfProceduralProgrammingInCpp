@@ -54,7 +54,7 @@ bool isNumberInRow(short row,char number) {
 // TODO dorobic sprawdzanie czy wszystkie 3 warunki sa true jesli tak to true // &&
 
 
-short createMenu() {
+short showMenu() {
 	cout << "Wybierz poziom trudnosci:" << endl;
 	cout << "1 - Latwy" << endl;
 	cout << "2 - Sredni" << endl;
@@ -64,26 +64,8 @@ short createMenu() {
 	return 0;
 }
 int main() {
-
-	for (int i = 0; i < testowy.size(); i++) {
-		cout << testowy[i] << endl;
-	}
-	
-	cout << endl;
-	
-	for (int i = 0; i < testowy.size(); i++) {
-		if (i == 3) {
-			std::vector<int>::iterator it = testowy.begin();
-			testowy.insert (it,3,5);
-			
-		}
-		cout << testowy[i] << endl;
-	}
-
-	cout << endl;
-
 	cout << "SUDOKU" << endl;
-	createMenu();
+	showMenu();
 	genMap();
 	for(;;){
 	switch (level) {
@@ -100,7 +82,9 @@ int main() {
 		genBoard(25);
 		break;
 	default:
-		//TODO Dorobic komunikat o tym ze nie ma takiej pozycji w menu
+		cout << "Nie ma takiej pozycji w menu, koniec programu" << endl;
+		system("pause");
+		return 0;
 
 		system("pause");
 		return 0;
