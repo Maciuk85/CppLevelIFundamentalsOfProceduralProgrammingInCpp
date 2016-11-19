@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -7,9 +8,9 @@ double x1, x2;//dziedzina od-do
 double step; //krok
 vector <double> results;
 double wspolczynniki[4];
-double calculate(double a,double b,double c,double d,double x) {
+double calculate(double x) {
 	double result;
-	result = a*sin(x+b) + c*cos(x+d); // Nie wiem jak dzialaja te sinusy i cosinusy :/
+	result = wspolczynniki[0]*sin(x+ wspolczynniki[1]) + wspolczynniki[2] *cos(x+ wspolczynniki[3]); // Nie wiem jak dzialaja te sinusy i cosinusy :/
 	return result;
 }
 void wczytajWspolczynniki(){
@@ -24,6 +25,8 @@ cout << "d: ";
 cin >> wspolczynniki[3];
 }
 int main() {
+
+
 	cout << "Podaj zakres dziedziny funkcji:" << endl;
 	cout << "Od: ";
 	cin >> x1;
@@ -33,8 +36,8 @@ int main() {
 	cin >> step;
 	wczytajWspolczynniki();
 
-	for (int i = 0; i < (x2 - x1)/step; i++) {
-		results.push_back(calculate(wspolczynniki[0],wspolczynniki[1],wspolczynniki[2],wspolczynniki[3],i));
+	for (double i = x1; i <= x2; i=i+step) {
+		results.push_back(calculate(i));
 	}
 	cout << "Wyniki: " << endl;
 	for (int i = 0; i < results.size(); i++) {

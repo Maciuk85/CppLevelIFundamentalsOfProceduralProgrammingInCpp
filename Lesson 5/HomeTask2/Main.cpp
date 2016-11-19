@@ -18,22 +18,28 @@ void validateInput(string fieldName, int &value) {
 	cin.clear();
 	cin.ignore((unsigned)-1, '\n');
 }
-bool isElementInList(int element) {
-	if (element >= list.size()) {
-		return false;
+void chceckIndexesIsInList(string comunicate) {
+	validateInput(comunicate, element);
+	while (element >= list.size()) {
+			cout << "Blad, nie ma elementu ze wskazanym indeksem";
+			validateInput(comunicate, element);
 	}
-	return true;
+
 }
+
+
+
+
 void addElement() {
-	validateInput("Podaj na ktora pozycje ma zostac wstawiony nowy element", element);
+	chceckIndexesIsInList("Podaj na ktora pozycje ma zostac wstawiony nowy element");
 	validateInput("Podaj nowy element", elementv2);
 	list.insert(list.begin() + element, elementv2);
 
 }
 //TODO walidacja
 void changeElement() {
-	cout << "Podaj ktory element ma zostac podmnieony: ";
-		cin >> element;
+		
+		chceckIndexesIsInList("Podaj ktory element ma zostac podmnieony: ");
 	cout << "Wprowadz nowy element: ";
 	cin >> elementv2;
 	list.erase(list.begin() + element);
@@ -41,13 +47,9 @@ void changeElement() {
 } 
 //TODO walidacja
 void deleteElement() {
-	validateInput("Podaj element ktory ma zostac usuniety", element);
-	if (!isElementInList(element)) {
-		cout << "Brak elementu o takim indeksie." << endl;
-	}
-	else {
+	chceckIndexesIsInList("Podaj element ktory ma zostac usuniety");
 		list.erase(list.begin() + element);
-	}
+	
 }
 void readList() {
 	validateInput("Podaj ile przedmiotow ma liczyc lista", numberOfElements);
@@ -71,6 +73,7 @@ void showList() {
 		cout << list[i] << endl;
 	}
 }
+
 int main() {
 	readList();
 	for (;;) {

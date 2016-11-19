@@ -74,33 +74,32 @@ int main() {
 
 	int cenaProduktu;
 	string nazwaProduktu;
-	validateInput("Nazwa produktu", nazwaProduktu);
 	validateInput("Cena produktu", cenaProduktu);
 
 
-	//for(;;){
-	//	system("cls");
-	//	showMenu();
+	for(;;){
+		system("cls");
+		showMenu();
 
-	//switch (menu) {
-	//case 1:
-	//	addProduct();
-	//	break;
-	//case 2:
-	//	products.pop_back();
-	//	break;
-	//case 3:
-	//	setPrices();
-	//	showList();
-	//	cout << "Do zaplaty: " << calculateSum() << "zl" << endl;
-	//	system("pause");
-	//	return 0;
-	//	break;
-	//default:
-	//	break;
+	switch (menu) {
+	case 1:
+		addProduct();
+		break;
+	case 2:
+		products.pop_back();
+		break;
+	case 3:
+		setPrices();
+		showList();
+		cout << "Do zaplaty: " << calculateSum() << "zl" << endl;
+		system("pause");
+		return 0;
+		break;
+	default:
+		break;
 
-	//	}
-	//}
+		}
+	}
 	system("pause");
 	return(0);
 }
