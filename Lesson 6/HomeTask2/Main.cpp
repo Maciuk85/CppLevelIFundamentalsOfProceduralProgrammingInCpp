@@ -11,17 +11,17 @@ short menu;
 double calculate(double x) {
 	double result;
 	switch (menu) {
-	case 1: 
+	case 1:
 		result = 4 * x;
 		break;
 	case 2:
-		result = x+3;
+		result = x + 3;
 		break;
 	case 3:
-		result =x-2;
+		result = x - 2;
 		break;
 	case 4:
-		result = 0,75*x;
+		result = 0, 75 * x;
 		break;
 	case 5:
 		result = x;
@@ -30,16 +30,16 @@ double calculate(double x) {
 		result = x / 5;
 		break;
 	case 7:
-		result = 2*x+3;
+		result = 2 * x + 3;
 		break;
 	case 8:
-		result = 3*x-5;
+		result = 3 * x - 5;
 		break;
 	case 9:
-		result = 0,5*4*x;
+		result = 0, 5 * 4 * x;
 		break;
 	case 10:
-		result = 3*0,2*x;
+		result = 3 * 0, 2 * x;
 		break;
 	}
 	return result;

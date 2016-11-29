@@ -16,7 +16,7 @@ void genCode() {
 	for (int i = 0; i < 26; i++) {
 		a = rand() % 26;
 		code[i] = alphabet[a];
-		alphabet.erase (alphabet.begin() + a-1);
+		alphabet.erase(alphabet.begin() + a - 1);
 	}
 }
 void createAlphabet() {
@@ -83,6 +83,6 @@ int main() {
 			return 0;
 		}
 	}
-	
-	
+
+
 }

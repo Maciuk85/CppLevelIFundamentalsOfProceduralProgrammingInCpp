@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BB9CAE00-84BC-46E7-8B56-87D2B6ABDBBC}</ProjectGuid>
+    <ProjectGuid>{A43D4047-0CF8-42D4-9980-558CC4BAB28A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>HomeTask2</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
