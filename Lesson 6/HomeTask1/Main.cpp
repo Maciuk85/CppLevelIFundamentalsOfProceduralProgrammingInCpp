@@ -2,34 +2,25 @@
 #include <vector>
 #include <time.h>
 #include<string>
-
+#include <cstring>
 using namespace std;
 
 string word;
-char letter('A');
-char code[26];
-vector<char> alphabet[26];
-vector<char> alphabetv2[26];
+string ss = "aaa";
+const char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+char alphabet2[size(alphabet)];
+vector <char> vectorAlphabet(alphabet, alphabet + size(alphabet));
 short menu, a;
 
 void genCode() {
-	for (int i = 0; i < 26; i++) {
-		a = rand() % 26;
-		code[i] = alphabet[a];
-		alphabet.erase(alphabet.begin() + a - 1);
+	int i = 0;
+	while(vectorAlphabet.size() != 1){
+		short randomIndex = rand() % (vectorAlphabet.size()-1);
+		alphabet2[i] = vectorAlphabet[randomIndex];
+		vectorAlphabet.erase(vectorAlphabet.begin()+randomIndex);
+		i++;
 	}
-}
-void createAlphabet() {
-	letter = 'A';
-	for (int i = 0; i < 26; i++) {
-		alphabet[i] = letter;
-		letter = letter + 1;
-	}
-	letter = 'A';
-	for (int i = 0; i < 26; i++) {
-		alphabetv2[i] = letter;
-		letter = letter + 1;
-	}
+	alphabet2[i] = vectorAlphabet[0];
 }
 void createMenu() {
 	cout << "Wybierz operacje: " << endl;
@@ -41,18 +32,21 @@ void createMenu() {
 
 int main() {
 	srand(time(NULL));
-	createAlphabet();
 	genCode();
+
+
 	for (;;) {
 		createMenu();
 		switch (menu) {
 		case 1:
 			cout << "Podaj slowo: ";
 			cin >> word;
-			for (int i = 0; i < word.size(); i++) {
-				for (int j = 0; j < 26; j++) {
-					if (word[j] == alphabetv2[i]) {
-						word[j] = code[i];
+			cout << "roZMIAR = " << size(word) << endl;
+			for (int i = 0; i < size(word); i++) {
+				for (int j = 0; j < size(alphabet); j++) {
+					if (alphabet[j] == word[i]) {
+						word[i] = alphabet2[j];
+						break;
 					}
 				}
 			}
@@ -61,20 +55,20 @@ int main() {
 		case 2:
 			cout << "Podaj slowo: ";
 			cin >> word;
-			for (int i = 0; i < word.size(); i++) {
-				for (int j = 0; j < 26; j++) {
-					if (word[j] == code[i]) {
-						word[j] = alphabetv2[i];
+			for (int i = 0; i < size(word); i++) {
+				for (int j = 0; j < size(alphabet); j++) {
+					if (alphabet2[j] == word[i] ) {
+						word[i] = alphabet[j];
+						break;
 					}
 				}
 			}
 			cout << endl << "Odszyfrowane slowo: " << word << endl;
 			break;
 		case 3:
-			letter = 'A';
-			for (int i = 0; i < 26; i++) {
-				cout << letter << ' = ' << code[i] << endl;
-				letter = letter + 1;
+			cout << "Rozmiar = " << size(alphabet) << endl;
+			for (int i = 0; i <size(alphabet); i++) {
+				cout << alphabet[i] << " = " << alphabet2[i] << endl;
 			}
 			break;
 		default:
@@ -85,4 +79,6 @@ int main() {
 	}
 
 
+	system("pasue");
+	return 0;
 }
