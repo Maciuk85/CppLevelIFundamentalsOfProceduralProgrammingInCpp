@@ -7,10 +7,10 @@ using namespace std;
 double x1, x2;//dziedzina od-do
 double step; //krok
 vector <double> results;
-short menu;
+short operationNum;
 double calculate(double x) {
 	double result;
-	switch (menu) {
+	switch (operationNum) {
 	case 1:
 		result = 4 * x;
 		break;
@@ -44,7 +44,7 @@ double calculate(double x) {
 	}
 	return result;
 }
-void createMenu() {
+void showMainMenu() {
 	cout << "Wybierz funkcje: " << endl;
 	cout << "1. f(x) = 4x" << endl;
 	cout << "2. f(x) = x+3" << endl;
@@ -57,11 +57,11 @@ void createMenu() {
 	cout << "9. f(x) = 0,5*4x" << endl;
 	cout << "10. f(x) = 3*0,2x" << endl;
 	cout << "11.Koniec porgramu" << endl;
-	cin >> menu;
+	cin >> operationNum;
 }
 int main() {
-	createMenu();
-	if (menu > 10) {
+	showMainMenu();
+	if (operationNum > 10) {
 		cout << "Koniec programu" << endl;
 		system("pause");
 		return 0;
