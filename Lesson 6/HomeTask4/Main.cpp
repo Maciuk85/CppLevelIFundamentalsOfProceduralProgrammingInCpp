@@ -4,7 +4,7 @@
 #include <vector>
 
 using namespace std;
-short carNum, partNum;
+int carNum, partNum;
 short parameters[8][6];
 short shop[3][5]; // [partNum(1 -mechaniczne 2-wizualne 3- dodatkowe)] [numer czesci]
 const string cars[8] = { "Bugatti Veyron","Porsche 911","Lamborghini","Audi","Ferrari","Mercedes","Seat", "Ford" };
@@ -147,7 +147,7 @@ void showMainMenu() {
 		break;
 	case 2:
 		exit(0);
-	default:
+	default: 
 		exit(0);
 		break;
 	}
