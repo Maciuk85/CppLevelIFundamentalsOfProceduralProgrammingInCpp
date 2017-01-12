@@ -4,9 +4,8 @@
 #include <vector>
 
 using namespace std;
-int carNum, partNum;
-short parameters[8][6];
-short shop[3][5]; // [partNum(1 -mechaniczne 2-wizualne 3- dodatkowe)] [numer czesci]
+short carNum;
+short parameters [8][6];
 const string cars[8] = { "Bugatti Veyron","Porsche 911","Lamborghini","Audi","Ferrari","Mercedes","Seat", "Ford" };
 string nick;
 
@@ -15,30 +14,6 @@ void backToPreviousView() {
 	{
 		cout << "Wcisnij ESC aby zamknac";
 	} while (_getch() != '\x1B');
-}
-
-void openShop() {
-	cout << "Sklep" << endl;
-	cout << "Wybierz czêœci: " << endl;
-	cout << "1. Mechaniczne" << endl;
-	cout << "2. Wizualne" << endl;
-	cout << "3. Dodatkowe" << endl;
-	cout << "4. Powrót" << endl;
-	cin >> partNum;
-	switch (partNum) {
-	case 1:
-
-		break;
-	case 2:
-
-		break;
-	case 3:
-		
-		break;
-	case 4:
-		system("cls");
-		backToPreviousView();
-	}
 }
 
 void genParameters() {
@@ -119,8 +94,7 @@ void showGameMenu() {
 
 			break;
 		default:
-			system("cls");
-			backToPreviousView();
+
 			break;
 		}
 	}
@@ -147,9 +121,6 @@ void showMainMenu() {
 		break;
 	case 2:
 		exit(0);
-	default: 
-		exit(0);
-		break;
 	}
 }
 

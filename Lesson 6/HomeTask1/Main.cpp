@@ -10,7 +10,7 @@ string ss = "aaa";
 const char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 char alphabet2[size(alphabet)];
 vector <char> vectorAlphabet(alphabet, alphabet + size(alphabet));
-short menu, a;
+short operationNum, a;
 
 void genCode() {
 	int i = 0;
@@ -22,12 +22,12 @@ void genCode() {
 	}
 	alphabet2[i] = vectorAlphabet[0];
 }
-void createMenu() {
+void showMainMenu() {
 	cout << "Wybierz operacje: " << endl;
 	cout << "1.Zaszyfruj" << endl;
 	cout << "2.Odszyfruj" << endl;
 	cout << "3.Wyswietl szyfr" << endl;
-	cin >> menu;
+	cin >> operationNum;
 }
 
 int main() {
@@ -36,8 +36,8 @@ int main() {
 
 
 	for (;;) {
-		createMenu();
-		switch (menu) {
+		showMainMenu();
+		switch (operationNum) {
 		case 1:
 			cout << "Podaj slowo: ";
 			cin >> word;
