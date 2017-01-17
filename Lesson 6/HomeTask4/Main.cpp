@@ -1,13 +1,41 @@
-#include <iostream>
+﻿#include <iostream>
 #include<string>
 #include <conio.h>
 #include <vector>
+#include <array>
 
 using namespace std;
-short carNum;
+short carNum, money;
 short parameters [8][6];
+short shopElements[3][3][1];
+string shopElementsNames[9] = { "Lakier","Zderzak","Szyby", "Tloki","Olej Silnikowy", "Amortyzatory","Nitro NOS","Nitro YAMAHA", "Nitro POWER" };
 const string cars[8] = { "Bugatti Veyron","Porsche 911","Lamborghini","Audi","Ferrari","Mercedes","Seat", "Ford" };
 string nick;
+
+void validateInput(string fieldName, short &value) {
+	cout << fieldName << " = ";
+	while (!(cin >> value)) {
+		cout << "Blad. Wprowadz ponownie " << fieldName << " = ";
+		cin.clear();
+		cin.ignore((unsigned)-1, '\n');
+	}
+	cin.clear();
+	cin.ignore((unsigned)-1, '\n');
+}
+
+bool validatePositionOnTable(short value,short sizeOfTable) {
+	if (value -1 < sizeOfTable) {
+		return true;
+	}
+	return false;
+}
+
+bool isEnoughMoney(short indexOfCategorie,short indexOfName,short indexOfPrice) {
+	if (shopElements[indexOfCategorie][indexOfName][indexOfPrice] <= money) {
+		return true;
+	}
+	return false;
+}
 
 void backToPreviousView() {
 	do
@@ -63,12 +91,66 @@ void showUserProfile() {
 	cout << "Stan karoserii: " << parameters[carNum][4] << endl;
 	cout << "Stan mechaniczny: " << parameters[carNum][5] << endl;
 	cout << "Nitro: " << parameters[carNum][6] << endl;
+	cout << "Stan konta: " << money << endl;
+}
 
+void chooseShopElement() {
+	short shopNum;
+	validateInput("Pozycja w sklepie", shopNum);
+}
+
+void showCaroseryElements() {
+	system("cls");
+	cout << "Stan konta: " << money << endl;
+	cout << "Czesci do zakupienia: " << endl;
+	cout << "1.Lakier" << endl;
+	cout << "2.Zderzak" << endl;
+	cout << "3.Szyby" << endl;
+}
+void showMechanicElements() {
+	system("cls");
+	cout << "Stan konta: " << money << endl;
+	cout << "Czesci do zakupienia: " << endl;
+	cout << "1.Tloki" << endl;
+	cout << "2.Olej Silnikowy" << endl;
+	cout << "3.Amortyzatory" << endl;
+}
+void showNitroElements() {
+	system("cls");
+	cout << "Stan konta: " << money << endl;
+	cout << "Czesci do zakupienia: " << endl;
+	cout << "1.Nitro NOS" << endl;
+	cout << "2.Nitro YAMAHA" << endl;
+	cout << "3.Nitro POWER" << endl;
+}
+
+void showShop() {
+	short operationNum;
+	for (;;) {
+		system("cls");
+		cout << "1.Ulepszenia karoserii" << endl;
+		cout << "2.Ulepszenia mechaniczne" << endl;
+		cout << "3.Ulepszenia Nitro" << endl;
+		switch (operationNum) {
+		case 1:
+
+			break;
+		case 2: 
+
+			break;
+		case 3:
+			
+			break;
+		default:
+
+			break;
+		}
+	}
 }
 
 void showGameMenu() {
+	short operationNum;
 	for (;;) {
-		short operationNum;
 		system("cls");
 		cout << "1.Wyscig" << endl;
 		cout << "2.Profil gracza" << endl;
@@ -88,7 +170,9 @@ void showGameMenu() {
 
 			break;
 		case 4:
-
+			showShop();
+			chooseShopElement();
+			backToPreviousView();
 			break;
 		case 5:
 
